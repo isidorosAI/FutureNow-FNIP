@@ -1,0 +1,56 @@
+{
+	"CrestronSerialDeviceApi": {
+		"DeviceSupport": {
+		},
+		"DeviceSupport2": [],
+		"GeneralInformation": {
+			"DeviceType": "Relay",
+			"Manufacturer": "FutureNow",
+			"BaseModel": "FNIP-6x2AD",
+			"VersionDate": "2022-11-21, 13:56:00",
+			"DriverVersion": "1.0.0",
+			"SdkVersion": "8.0000.0012",
+			"Description": "Driver for FNIP-6x2AD relay",
+			"Guid": "65d25dde-aeb7-41f8-85d8-6e8ecc9b1a46",
+			"ExtensionDeviceData": {
+				"IsExtensionDevice": true,
+				"IsMediaDevice": false,
+				"IsMediaSource": false
+			},
+			"SupportedSeries": [ "FNIP" ],
+			"SupportedModels": [
+				"FNIP-6x2AD",
+				"FNIP-8x16A",
+				"FNIP-12xPWM",
+				"FNIP-12xMZT"
+			]
+		},
+		"Api": {
+			"Communication": {
+				"CommunicationType": 1,
+				"Protocol": -1,
+				"Baud": -1,
+				"Parity": -1,
+				"HwHandshake": -1,
+				"SwHandshake": -1,
+				"DataBits": 0,
+				"StopBits": -1,
+				"Port": 80,
+				"EnableAutoPolling": false,
+				"EnableAutoReconnect": true,
+				"TimeBetweenCommands": 250,
+				"ResponseTimeout": 3000,
+				"WaitForResponse": false,
+				"IpProtocol": 0,
+				"IsUserAdjustable": false,
+				"Authentication": {
+					"Type": "None",
+					"Required": false
+				},
+				"IsSecure": false,
+				"UserAdjustableProperties": []
+			}
+		},
+		"Dependencies": [ "" ]
+	}
+}

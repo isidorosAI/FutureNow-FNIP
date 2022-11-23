@@ -1,0 +1,244 @@
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\FutureNow FNIP.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\FutureNow FNIP.pdb
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.API.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.Core.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.NonSandboxed.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.SDK.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.SimplSharpPro.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.AudioDistribution.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.CrestronConnected.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DeviceSupport.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DM.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.EthernetCommunications.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Fusion.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Gateways.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.GeneralIO.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Keypads.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Lighting.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Media.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Remotes.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Shades.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Thermostats.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.ThreeSeriesCards.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UC.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UI.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\CrestronCertifiedDriverResourcesLibrary.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IrAvReceiver.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IrAVSwitcher.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IrBlurayPlayer.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IrCableBox.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IrDisplay.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IrVideoServer.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADAVReceiver.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADBlurayPlayer.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADCableBox.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADCommon.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADDisplay.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADProTransports.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADSecuritySystem.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADVideoServer.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpAutoUpdateInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpCryptographyInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpCustomAttributesInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpCWSHelperInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpExchangeWebServices.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpHelperInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpNewtonsoft.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpOnvifInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpPro.exe
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpProgrammingInterfaces.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpReflectionInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpSQLHelperInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpTimerEventInterface.dll
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.API.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.AudioDistribution.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.CrestronConnected.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DeviceSupport.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DM.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.EthernetCommunications.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Fusion.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Gateways.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.GeneralIO.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Keypads.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Lighting.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Media.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Remotes.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Shades.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Thermostats.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.ThreeSeriesCards.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UC.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UI.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADAVReceiver.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADBlurayPlayer.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADCableBox.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADCommon.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADDisplay.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADProTransports.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADSecuritySystem.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\RADVideoServer.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpAutoUpdateInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpCryptographyInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpCustomAttributesInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpCWSHelperInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpExchangeWebServices.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpHelperInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpNewtonsoft.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpOnvifInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpPro.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpProgrammingInterfaces.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpReflectionInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpSQLHelperInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\SimplSharpTimerEventInterface.xml
+C:\Users\User\source\repos\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.CopyComplete
+C:\Users\User\source\repos\FutureNow FNIP\obj\Debug\FutureNow FNIP.dll
+C:\Users\User\source\repos\FutureNow FNIP\obj\Debug\FutureNow FNIP.pdb
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IncludeInPkg\UiDefinitions\UiDefinition.xml
+C:\Users\User\source\repos\FutureNow FNIP\bin\Debug\IncludeInPkg\Translations\en-US.json
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\IncludeInPkg\UiDefinitions\UiDefinition.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\IncludeInPkg\Translations\en-US.json
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\FutureNow FNIP.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\FutureNow FNIP.pdb
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.AudioDistribution.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.CrestronConnected.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DeviceSupport.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DM.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.EthernetCommunications.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Fusion.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Gateways.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.GeneralIO.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Keypads.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Lighting.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Media.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Remotes.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Shades.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Thermostats.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.ThreeSeriesCards.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UC.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UI.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpAutoUpdateInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpCryptographyInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpCustomAttributesInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpCWSHelperInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpExchangeWebServices.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpHelperInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpNewtonsoft.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpOnvifInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpPro.exe
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpProgrammingInterfaces.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpReflectionInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpSQLHelperInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpTimerEventInterface.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.DeviceDrivers.API.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.AudioDistribution.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.CrestronConnected.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DeviceSupport.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DM.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.EthernetCommunications.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Fusion.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Gateways.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.GeneralIO.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Keypads.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Lighting.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Media.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Remotes.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Shades.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Thermostats.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.ThreeSeriesCards.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UC.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UI.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADAVReceiver.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADBlurayPlayer.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADCableBox.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADCommon.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADDisplay.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADProTransports.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADSecuritySystem.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\RADVideoServer.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpAutoUpdateInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpCryptographyInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpCustomAttributesInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpCWSHelperInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpExchangeWebServices.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpHelperInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpNewtonsoft.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpOnvifInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpPro.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpProgrammingInterfaces.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpReflectionInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpSQLHelperInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\bin\Debug\SimplSharpTimerEventInterface.xml
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.AssemblyReference.cache
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.CoreCompileInputs.cache
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.CopyComplete
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\obj\Debug\FutureNow FNIP.dll
+C:\Users\AI-DESKTOP-6\Desktop\Isidoros Temp\FutureNow FNIP\obj\Debug\FutureNow FNIP.pdb
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\IncludeInPkg\UiDefinitions\UiDefinition.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\IncludeInPkg\Translations\en-US.json
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\FutureNow FNIP.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\FutureNow FNIP.pdb
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.AudioDistribution.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.CrestronConnected.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DeviceSupport.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DM.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.EthernetCommunications.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Fusion.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Gateways.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.GeneralIO.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Keypads.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Lighting.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Media.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Remotes.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Shades.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Thermostats.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.ThreeSeriesCards.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UC.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UI.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpAutoUpdateInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpCryptographyInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpCustomAttributesInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpCWSHelperInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpExchangeWebServices.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpHelperInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpNewtonsoft.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpOnvifInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpPro.exe
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpProgrammingInterfaces.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpReflectionInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpSQLHelperInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpTimerEventInterface.dll
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.AudioDistribution.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.CrestronConnected.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DeviceSupport.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.DM.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.EthernetCommunications.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Fusion.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Gateways.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.GeneralIO.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Keypads.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Lighting.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Media.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Remotes.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Shades.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.Thermostats.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.ThreeSeriesCards.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UC.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\Crestron.SimplSharpPro.UI.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpAutoUpdateInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpCryptographyInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpCustomAttributesInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpCWSHelperInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpExchangeWebServices.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpHelperInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpNewtonsoft.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpOnvifInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpPro.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpProgrammingInterfaces.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpReflectionInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpSQLHelperInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\bin\Debug\SimplSharpTimerEventInterface.xml
+C:\Users\User\Desktop\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\FutureNow FNIP\obj\Debug\FutureNow FNIP.csproj.CopyComplete
+C:\Users\User\Desktop\FutureNow FNIP\obj\Debug\FutureNow FNIP.dll
+C:\Users\User\Desktop\FutureNow FNIP\obj\Debug\FutureNow FNIP.pdb

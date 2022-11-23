@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uidefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation=" https://prd-use-rad-assets.azurewebsites.net/ExtensionsSchemaDefinition.xsd">
+	<version ver="3.0"/>
+	<tile icon="#icSun" navigation="show:MainPage" action="command:AllOn" showinhomepage="#false" showinroompage="#true"/>
+	<layouts>
+		<layout id="MainPage" title="^MainPageTitle" isdefaultlayout="#true">
+			<controls>
+				<toggleslider id="Light1" label="^Light1" togglevalue="{Light1value}" slidervalue="{Slider1value}" secondarylabel="{Percent1Value}"/>
+				<toggleslider id="Light2" label="^Light2" togglevalue="{Light2value}" slidervalue="{Slider2value}" secondarylabel="{Percent2Value}"/>
+				<toggleslider id="Light3" label="^Light3" togglevalue="{Light3value}" slidervalue="{Slider3value}" secondarylabel="{Percent3Value}"/>
+				<toggleslider id="Light4" label="^Light4" togglevalue="{Light4value}" slidervalue="{Slider4value}" secondarylabel="{Percent4Value}"/>
+				<toggleslider id="Light5" label="^Light5" togglevalue="{Light5value}" slidervalue="{Slider5value}" secondarylabel="{Percent5Value}"/>
+				<toggleslider id="Light6" label="^Light6" togglevalue="{Light6value}" slidervalue="{Slider6value}" secondarylabel="{Percent6Value}"/>
+			</controls>
+		</layout>
+	</layouts>
+	<alerts/>
+</uidefinition>
