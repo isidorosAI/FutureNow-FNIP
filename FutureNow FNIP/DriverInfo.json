@@ -4,11 +4,11 @@
 		},
 		"DeviceSupport2": [],
 		"GeneralInformation": {
-			"DeviceType": "Relay",
+			"DeviceType": "Lights",
 			"Manufacturer": "FutureNow",
 			"BaseModel": "FNIP-6x2AD",
 			"VersionDate": "2022-11-21, 13:56:00",
-			"DriverVersion": "1.0.0",
+			"DriverVersion": "1.0.3",
 			"SdkVersion": "8.0000.0012",
 			"Description": "Driver for FNIP-6x2AD relay",
 			"Guid": "65d25dde-aeb7-41f8-85d8-6e8ecc9b1a46",
@@ -51,6 +51,91 @@
 				"UserAdjustableProperties": []
 			}
 		},
+		"UserAttributes": [
+			{
+				"Typename": "Custom",
+				"ParameterId": "Name1value",
+				"Label": "Name:",
+				"Description": "The name of light #1",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "Light 1 Name"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Name2value",
+				"Label": "Name:",
+				"Description": "The name of light #2",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "Light 2 Name"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Name3value",
+				"Label": "Name:",
+				"Description": "The name of light #3",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "Light 3 Name"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Name4value",
+				"Label": "Name:",
+				"Description": "The name of light #4",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "Light 4 Name"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Name5value",
+				"Label": "Name:",
+				"Description": "The name of light #5",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "Light 5 Name"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Name6value",
+				"Label": "Name:",
+				"Description": "The name of light #6",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "Light 6 Name"
+				}
+			}
+		],
 		"Dependencies": [ "" ]
 	}
 }

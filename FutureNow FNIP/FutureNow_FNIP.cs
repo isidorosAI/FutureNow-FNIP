@@ -21,16 +21,20 @@ namespace FutureNow_FNIP
         private string[] Lights_Toggle_Keys;
         private string[] Lights_Slider_Keys;
 		private string[] Lights_Percent_Keys;
+		private const string AllLightsIcon_Key = "AllLightsIcon";
+		public bool AllLightsON = false;
 		#endregion Property Keys
 
 		#region UI properties
-		private PropertyValue<bool>[] Toggle_Property;
-        private PropertyValue<int>[] Slider_Property;
-		private PropertyValue<string>[] Percent_Property;
+		public PropertyValue<bool>[] Toggle_Property;
+        public PropertyValue<int>[] Slider_Property;
+		public PropertyValue<string>[] Percent_Property;
+		public PropertyValue<string>[] Light_Name_Property;
+		private PropertyValue<string> AllLightsIcon_Property;
 		#endregion UI properties
 
-        #region Delegates
-        public delegate void UI_Update_Delegate();
+		#region Delegates
+		public delegate void UI_Update_Delegate();
         #endregion Delegates
 
         public FutureNow_FNIP()
@@ -52,6 +56,7 @@ namespace FutureNow_FNIP
 			Log("Device_Name - Initialize - Start");
 			#endregion Debug Message
 
+			CrestronConsole.AddNewConsoleCommand(GetDIMState, "UpdateState", "Updates the state of all lights", ConsoleAccessLevelEnum.AccessAdministrator);
 
 			#region Setup UI
 			ChannelNumber = 6;
@@ -96,10 +101,19 @@ namespace FutureNow_FNIP
 			}
 			#endregion Setup Protocol
 
+			Protocol.GetDIMState();
+
 			#region Debug Message
 			Log("Device_Name - Initialize - Finish");
 			#endregion Debug Message
 		}
+
+		private void GetDIMState (string cmdParameters)
+        {
+			Log("GetDIMState");
+			Protocol.GetDIMState();
+			Log("GetDIMState");
+        }
 
 		private void Create_Device_Definition()
         {
@@ -109,9 +123,19 @@ namespace FutureNow_FNIP
 			Toggle_Property = new PropertyValue<bool>[ChannelNumber];
 			Slider_Property = new PropertyValue<int>[ChannelNumber];
 			Percent_Property = new PropertyValue<string>[ChannelNumber];
+			Light_Name_Property = new PropertyValue<string>[ChannelNumber];
 			Lights_Toggle_Keys = new string[ChannelNumber];
 			Lights_Slider_Keys = new string[ChannelNumber];
 			Lights_Percent_Keys = new string[ChannelNumber];
+
+			Light_Name_Property[0] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name1_Key, null, DevicePropertyType.String));
+			Light_Name_Property[1] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name2_Key, null, DevicePropertyType.String));
+			Light_Name_Property[2] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name3_Key, null, DevicePropertyType.String));
+			Light_Name_Property[3] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name4_Key, null, DevicePropertyType.String));
+			Light_Name_Property[4] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name5_Key, null, DevicePropertyType.String));
+			Light_Name_Property[5] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name6_Key, null, DevicePropertyType.String));
+			AllLightsIcon_Property = CreateProperty<string>(new PropertyDefinition(AllLightsIcon_Key, null, DevicePropertyType.String));
+			
 
 			for (int i = 0; i < ChannelNumber; i++)
             {
@@ -121,7 +145,10 @@ namespace FutureNow_FNIP
 				Toggle_Property[i] = CreateProperty<bool>(new PropertyDefinition(Lights_Toggle_Keys[i], null, DevicePropertyType.Boolean));
 				Slider_Property[i] = CreateProperty<int>(new PropertyDefinition(Lights_Slider_Keys[i], null, DevicePropertyType.Int32, 0, 100, 1));
 				Percent_Property[i] = CreateProperty<string>(new PropertyDefinition(Lights_Percent_Keys[i], null, DevicePropertyType.String));
-				Percent_Property[i].Value = "0";
+				Percent_Property[i].Value = "OFF";
+				Slider_Property[i].Value = 0;
+				Toggle_Property[i].Value = false;
+				AllLightsIcon_Property.Value = "icLightsOffDisabled";
 			}
 			#region Debug Message
 			Log("Device_Name - Create_Device_Definition - Finish");
@@ -129,50 +156,96 @@ namespace FutureNow_FNIP
 
 		}
 
-		public void Update_UI(int[] togglestate, int[] sliderstate, int[] secondarylabel)
+		public void Update_UI(int[] togglestate)
 		{
 			#region Debug Message
-			Log("Device_Name - Update_UI - Start");
+			Log("Device_Name - Update_UI(Toggle) - Start");
 			#endregion Debug Message
-			
 
-			if(togglestate.Length != ChannelNumber || sliderstate.Length != ChannelNumber)
+			int counter = 0; ;
+			if(togglestate.Length != ChannelNumber)
             {
 				return;
             }
             for (int i = 0; i < ChannelNumber; i++)
             {
-				secondarylabel[i] = 0;
-				if(togglestate[i] != -1)
-                {
+				if (togglestate[i] != -1)
+				{
 					Toggle_Property[i].Value = Convert.ToBoolean(togglestate[i]);
-					Slider_Property[i].Value = sliderstate[i];
-					secondarylabel[i] = sliderstate[i];
-					Percent_Property[i].Value = secondarylabel[i].ToString();
 				}
-				if(sliderstate[i] != -1)
+
+				if (Toggle_Property[i].Value == true)
+				{
+					counter++;
+				}
+
+                if (counter > 0)
                 {
-                    if (sliderstate[i] > 0)
-                    {
-						Toggle_Property[i].Value = true;
-					}
-					else
-                    {
-						Toggle_Property[i].Value = false;
-                    }
+					AllLightsON = true;
+					AllLightsIcon_Property.Value = "icLightsOnRegular";
 
-					Slider_Property[i].Value = sliderstate[i];
-					secondarylabel[i] = sliderstate[i];
-					Percent_Property[i].Value = secondarylabel[i].ToString();
-
+				}
+				else
+                {
+					AllLightsON = false;
+					AllLightsIcon_Property.Value = "icLightsOffDisabled";
 				}
 			}
-
-			Commit();
+            Commit();
 
 			#region Debug Message
 			Log("Device_Name - Update_UI - Finish");
 			#endregion Debug Message
+		}
+
+		public void Update_UI(int[] sliderstate, int[] secondarylabel)
+        {
+			#region Debug Message
+			Log("Device_Name - Update_UI(Slider,Percent) - Start");
+			#endregion Debug Message
+
+			if (sliderstate.Length != ChannelNumber)
+            {
+				return;
+            }
+            for (int i = 0; i < ChannelNumber; i++)
+            {
+				if (sliderstate[i] != -1)
+				{
+					if (sliderstate[i] > 0)
+					{
+						Toggle_Property[i].Value = true;
+						Slider_Property[i].Value = sliderstate[i];
+						AllLightsIcon_Property.Value = "icLightsOnRegular";
+						//Protocol.SliderLight(i + 1, sliderstate[i]);
+						//Protocol.TurnOnLight(i + 1);
+						//Percent_Property[i].Value = secondarylabel[i].ToString();
+					}
+					else
+					{
+						Toggle_Property[i].Value = false;
+						Slider_Property[i].Value = 0;
+						//Protocol.SliderLight(i + 1, 0);
+						//Protocol.TurnOffLight(i + 1);
+						//Percent_Property[i].Value = "OFF";
+					}
+
+					Slider_Property[i].Value = sliderstate[i];
+				}
+				if (secondarylabel[i] != -1)
+				{
+					if (secondarylabel[i] == 0)
+					{
+						Percent_Property[i].Value = "OFF";
+					}
+					else
+					{
+						Percent_Property[i].Value = Convert.ToString(secondarylabel[i]) + "%";
+						AllLightsIcon_Property.Value = "icLightsOnRegular";
+					}
+				}
+			}
+			Commit();
 		}
 
 		public void SetStatus(bool status)
@@ -197,11 +270,26 @@ namespace FutureNow_FNIP
 		#region Overrides
 		protected override IOperationResult DoCommand(string command, string[] parameters)
 		{
+			//icLightsOffDisabled
+			//icLightsOnRegular
+			//icSpinner
+
 			//The tile of the Device was pressed
 			if (command == "AllOn")
 			{
-				//Invert the state of all lights
-				Protocol.ToggleLight(0);
+				AllLightsIcon_Property.Value = "icSpinner";
+				Commit();
+				if (AllLightsON == true)
+                {
+					AllLightsOff();
+					AllLightsIcon_Property.Value = "icLightsOffDisabled";
+				}
+                else
+                {
+					AllLightsOn();
+					AllLightsIcon_Property.Value = "icLightsOnRegular";
+				}
+				Commit();
 			}
 
 			return new OperationResult(OperationResultCode.Success);
@@ -216,46 +304,62 @@ namespace FutureNow_FNIP
 				{
 					//Turn on or off the Light i, depending on the state of the property
 					var state = value as bool?;
-					var sliderstate = value as int?;
 					if (state != null)
 					{
-						/*if (state == true)
+						if (state == true)
 						{
 							Protocol.TurnOnLight(i + 1);
+							//Protocol.SliderLight(i + 1, 100);
+							Slider_Property[i].Value = 100;
+							Percent_Property[i].Value = "100%";
+							Toggle_Property[i].Value = true;
 						}
 						else
 						{
 							Protocol.TurnOffLight(i + 1);
-						}*/
-						Protocol.ToggleLight(i + 1);
-						Protocol.SliderLight(i + 1, (int)sliderstate);
+							//Protocol.SliderLight(i + 1, 0);
+							Slider_Property[i].Value = 0;
+							Percent_Property[i].Value = "OFF";
+							Toggle_Property[i].Value = false;
+						}
+						//Protocol.ToggleLight(i + 1);
+						//Protocol.SliderLight(i + 1, (int)sliderstate);
 					}
 					//Save the state of the toggle
-					Toggle_Property[i].Value = (bool)state;
-					Percent_Property[i].Value = sliderstate.ToString();
+					//Toggle_Property[i].Value = (bool)state;
 					//Save the changes made to the UI
 					Commit();
 
 					return new OperationResult(OperationResultCode.Success);
 				}
-                else if (propertyKey == Lights_Slider_Keys[i])
-                {
+				else if (propertyKey == Lights_Slider_Keys[i])
+				{
+					Log("Slider pressed");
 					var sliderstate = value as int?;
-                    if (sliderstate != null)
-                    {
-						Protocol.SliderLight(i + 1, (int)sliderstate);
+					Log("sliderstate is: " + sliderstate);
+					//var togglestate = value as bool?;
+					if (sliderstate != null)
+					{
+						Log("Sliderstate is not null");
+						//Slider_Property[i].Value = (int)sliderstate;
 
-						if ((int)sliderstate > 0)
+						if (sliderstate > 0)
 						{
+							//Protocol.TurnOnLight(i + 1);
+							Protocol.SliderLight(i + 1, (int)sliderstate);
 							Toggle_Property[i].Value = true;
+							Percent_Property[i].Value = Convert.ToString(sliderstate) + "%";
+							Log("Changed slider value to:" + (int)sliderstate);
 						}
 						else
 						{
+							//Protocol.TurnOffLight(i + 1);
+							Protocol.SliderLight(i + 1, 0);
 							Toggle_Property[i].Value = false;
+							Percent_Property[i].Value = "OFF";
 						}
-					}
 
-					Percent_Property[i].Value = sliderstate.ToString();
+					}
 					Slider_Property[i].Value = (int)sliderstate;
 
 					Commit();
@@ -263,9 +367,12 @@ namespace FutureNow_FNIP
 					return new OperationResult(OperationResultCode.Success);
 				}
 				else if (propertyKey == Lights_Percent_Keys[i])
-                {
-					var sliderstate = value as int?;
-					Percent_Property[i].Value = sliderstate.ToString();
+				{
+					var state = value as string;
+					Percent_Property[i].Value = state + "%";
+					Commit();
+
+					return new OperationResult(OperationResultCode.Success);
 				}
 			}
 			return new OperationResult(OperationResultCode.Error);
@@ -280,23 +387,29 @@ namespace FutureNow_FNIP
 				{
 					//Turn on or off the Light i, depending on the state of the property
 					var state = value as bool?;
-					var sliderstate = value as int?;
 					if (state != null)
 					{
-						/*if (state == true)
+						if (state == true)
 						{
 							Protocol.TurnOnLight(i + 1);
+							//Protocol.SliderLight(i + 1, 100);
+							Slider_Property[i].Value = 100;
+							Percent_Property[i].Value = "100%";
+							Toggle_Property[i].Value = true;
 						}
 						else
 						{
 							Protocol.TurnOffLight(i + 1);
-						}*/
-						Protocol.ToggleLight(i + 1);
-						Protocol.SliderLight(i + 1, (int)sliderstate);
+							//Protocol.SliderLight(i + 1, 0);
+							Slider_Property[i].Value = 0;
+							Percent_Property[i].Value = "OFF";
+							Toggle_Property[i].Value = false;
+						}
+						//Protocol.ToggleLight(i + 1);
+						//Protocol.SliderLight(i + 1, (int)sliderstate);
 					}
 					//Save the state of the toggle
-					Percent_Property[i].Value = sliderstate.ToString();
-					Toggle_Property[i].Value = (bool)state;
+					//Toggle_Property[i].Value = (bool)state;
 					//Save the changes made to the UI
 					Commit();
 
@@ -304,24 +417,42 @@ namespace FutureNow_FNIP
 				}
 				else if (propertyKey == Lights_Slider_Keys[i])
 				{
+					Log("Slider pressed");
 					var sliderstate = value as int?;
+					Log("sliderstate is: " + sliderstate);
+					//var togglestate = value as bool?;
 					if (sliderstate != null)
 					{
-						
-						if ((int)sliderstate > 0)
+
+						//Slider_Property[i].Value = (int)sliderstate;
+
+						if (sliderstate > 0)
 						{
+							//Protocol.TurnOnLight(i + 1);
+							Protocol.SliderLight(i + 1, (int)sliderstate);
 							Toggle_Property[i].Value = true;
+							Percent_Property[i].Value = Convert.ToString(sliderstate) + "%";
+							Log("Changed slider value to:" + (int)sliderstate);
 						}
 						else
 						{
+							//Protocol.TurnOffLight(i + 1);
+							Protocol.SliderLight(i + 1, (int)sliderstate);
 							Toggle_Property[i].Value = false;
+							Percent_Property[i].Value = "OFF";
 						}
-						Protocol.SliderLight(i + 1, (int)sliderstate);
-					}
 
-					Percent_Property[i].Value = sliderstate.ToString();
+					}
 					Slider_Property[i].Value = (int)sliderstate;
 
+					Commit();
+
+					return new OperationResult(OperationResultCode.Success);
+				}
+				else if (propertyKey == Lights_Percent_Keys[i])
+				{
+					var state = value as string;
+					Percent_Property[i].Value = state + "%";
 					Commit();
 
 					return new OperationResult(OperationResultCode.Success);

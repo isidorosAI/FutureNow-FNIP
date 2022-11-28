@@ -193,6 +193,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Display_Text_Property.cs" />
     <Compile Include="FutureNow_FNIP.cs" />
     <Compile Include="FutureNow_FNIP_Protocol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
