@@ -13,23 +13,28 @@ namespace FutureNow_FNIP
     {
         #region Declarations
         internal int ChannelNumber;
-        public TcpTransport Transport;
+		public bool AllLightsON = false;
+		public TcpTransport Transport;
         public FutureNow_FNIP_Protocol Protocol;
         #endregion Declarations
 
         #region Property Keys
+		//Used to recognise what is being pressed/changed on the UI
+		//Must be bound to a UI property
         private string[] Lights_Toggle_Keys;
         private string[] Lights_Slider_Keys;
 		private string[] Lights_Percent_Keys;
 		private const string AllLightsIcon_Key = "AllLightsIcon";
-		public bool AllLightsON = false;
 		#endregion Property Keys
 
 		#region UI properties
+		//Used to trigger a change on the UI
+		//Must be initialized
 		public PropertyValue<bool>[] Toggle_Property;
         public PropertyValue<int>[] Slider_Property;
 		public PropertyValue<string>[] Percent_Property;
 		public PropertyValue<string>[] Light_Name_Property;
+		public PropertyValue<string>[] Light_Ramp_Property;
 		private PropertyValue<string> AllLightsIcon_Property;
 		#endregion UI properties
 
@@ -39,28 +44,17 @@ namespace FutureNow_FNIP
 
         public FutureNow_FNIP()
         {
-            #region Debug Message
-            Log("Device_Name - Constructor - Start");
-            #endregion Debug Message
-
-            #region Debug Message
-            Log("Device_Name - Constructor - Finish");
-            #endregion Debug Message
+           
         }
 
 		public void Initialize(IPAddress ipAddress, int port)
 		{
 			EnableLogging = true;
 
-			#region Debug Message
-			Log("Device_Name - Initialize - Start");
-			#endregion Debug Message
-
-			CrestronConsole.AddNewConsoleCommand(GetDIMState, "UpdateState", "Updates the state of all lights", ConsoleAccessLevelEnum.AccessAdministrator);
-
 			#region Setup UI
 			ChannelNumber = 6;
 
+			//Create all neccessary properties and bindings
 			Create_Device_Definition();
 			#endregion Setup UI
 
@@ -99,35 +93,34 @@ namespace FutureNow_FNIP
 				#endregion Debug Message
 				Crestron.SimplSharp.ErrorLog.Error(err + "\n");
 			}
-			#endregion Setup Protocol
+            #endregion Setup Protocol
 
-			Protocol.GetDIMState();
-
-			#region Debug Message
-			Log("Device_Name - Initialize - Finish");
-			#endregion Debug Message
+            #region Initialize Presets
+			//Sets the preset dim levels to 100 for all channels
+			//Preset dim level 0 means the last dim level will be used when next turned on
+            for (int i = 0; i < ChannelNumber; i++)
+            {
+				Protocol.SetDIMPresets(i + 1);
+            }
+			#endregion Initialize Presets
 		}
-
-		private void GetDIMState (string cmdParameters)
-        {
-			Log("GetDIMState");
-			Protocol.GetDIMState();
-			Log("GetDIMState");
-        }
 
 		private void Create_Device_Definition()
         {
-			#region Debug Message
-			Log("Device_Name - Create_Device_Definition - Start");
-			#endregion Debug Message
+			#region Init Arrays
+			//Initialize the arrays for the properties and the keys
 			Toggle_Property = new PropertyValue<bool>[ChannelNumber];
 			Slider_Property = new PropertyValue<int>[ChannelNumber];
 			Percent_Property = new PropertyValue<string>[ChannelNumber];
 			Light_Name_Property = new PropertyValue<string>[ChannelNumber];
+			Light_Ramp_Property = new PropertyValue<string>[ChannelNumber + 1];
 			Lights_Toggle_Keys = new string[ChannelNumber];
 			Lights_Slider_Keys = new string[ChannelNumber];
 			Lights_Percent_Keys = new string[ChannelNumber];
+			#endregion Init Arrays
 
+			#region Init Properties
+			//Create the properties and bind them to the corresponding key
 			Light_Name_Property[0] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name1_Key, null, DevicePropertyType.String));
 			Light_Name_Property[1] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name2_Key, null, DevicePropertyType.String));
 			Light_Name_Property[2] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name3_Key, null, DevicePropertyType.String));
@@ -135,7 +128,14 @@ namespace FutureNow_FNIP
 			Light_Name_Property[4] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name5_Key, null, DevicePropertyType.String));
 			Light_Name_Property[5] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Name6_Key, null, DevicePropertyType.String));
 			AllLightsIcon_Property = CreateProperty<string>(new PropertyDefinition(AllLightsIcon_Key, null, DevicePropertyType.String));
-			
+			Light_Ramp_Property[0] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp1_Key, null, DevicePropertyType.String));
+			Light_Ramp_Property[1] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp2_Key, null, DevicePropertyType.String));
+			Light_Ramp_Property[2] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp3_Key, null, DevicePropertyType.String));
+			Light_Ramp_Property[3] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp4_Key, null, DevicePropertyType.String));
+			Light_Ramp_Property[4] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp5_Key, null, DevicePropertyType.String));
+			Light_Ramp_Property[5] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp6_Key, null, DevicePropertyType.String));
+			Light_Ramp_Property[6] = CreateProperty<string>(new PropertyDefinition(FutureNow_FNIP_Protocol.Lights_Ramp7_Key, null, DevicePropertyType.String));
+
 
 			for (int i = 0; i < ChannelNumber; i++)
             {
@@ -150,166 +150,154 @@ namespace FutureNow_FNIP
 				Toggle_Property[i].Value = false;
 				AllLightsIcon_Property.Value = "icLightsOffDisabled";
 			}
-			#region Debug Message
-			Log("Device_Name - Create_Device_Definition - Finish");
-			#endregion Debug Message
-
+			#endregion Init Properties
 		}
 
-		public void Update_UI(int[] togglestate)
-		{
-			#region Debug Message
-			Log("Device_Name - Update_UI(Toggle) - Start");
-			#endregion Debug Message
-
-			int counter = 0; ;
-			if(togglestate.Length != ChannelNumber)
-            {
-				return;
-            }
-            for (int i = 0; i < ChannelNumber; i++)
-            {
-				if (togglestate[i] != -1)
-				{
-					Toggle_Property[i].Value = Convert.ToBoolean(togglestate[i]);
-				}
-
-				if (Toggle_Property[i].Value == true)
-				{
-					counter++;
-				}
-
-                if (counter > 0)
-                {
-					AllLightsON = true;
-					AllLightsIcon_Property.Value = "icLightsOnRegular";
-
-				}
-				else
-                {
-					AllLightsON = false;
-					AllLightsIcon_Property.Value = "icLightsOffDisabled";
-				}
-			}
-            Commit();
-
-			#region Debug Message
-			Log("Device_Name - Update_UI - Finish");
-			#endregion Debug Message
-		}
-
-		public void Update_UI(int[] sliderstate, int[] secondarylabel)
+        public void Update_UI(int[] state)
         {
-			#region Debug Message
-			Log("Device_Name - Update_UI(Slider,Percent) - Start");
-			#endregion Debug Message
+			int counter = 0;
 
-			if (sliderstate.Length != ChannelNumber)
+            #region segfault
+            //Make sure we don't get a segfault
+            if (state.Length != ChannelNumber)
             {
 				return;
             }
-            for (int i = 0; i < ChannelNumber; i++)
+			#endregion segfault
+
+			for (int i = 0; i < ChannelNumber; i++)
             {
-				if (sliderstate[i] != -1)
+				#region Update All Channels
+				//If value is -1, the message did not mention the channel i.
+				//Thus we will not change it's value
+				if (state[i] != -1)
 				{
-					if (sliderstate[i] > 0)
+					//state is equal to the current dimming level of the Light
+					if (state[i] > 0)
 					{
 						Toggle_Property[i].Value = true;
-						Slider_Property[i].Value = sliderstate[i];
+						Slider_Property[i].Value = state[i];
+						Percent_Property[i].Value = Convert.ToString(state[i]) + "%";
 						AllLightsIcon_Property.Value = "icLightsOnRegular";
-						//Protocol.SliderLight(i + 1, sliderstate[i]);
-						//Protocol.TurnOnLight(i + 1);
-						//Percent_Property[i].Value = secondarylabel[i].ToString();
 					}
 					else
 					{
 						Toggle_Property[i].Value = false;
 						Slider_Property[i].Value = 0;
-						//Protocol.SliderLight(i + 1, 0);
-						//Protocol.TurnOffLight(i + 1);
-						//Percent_Property[i].Value = "OFF";
-					}
-
-					Slider_Property[i].Value = sliderstate[i];
-				}
-				if (secondarylabel[i] != -1)
-				{
-					if (secondarylabel[i] == 0)
-					{
 						Percent_Property[i].Value = "OFF";
 					}
-					else
-					{
-						Percent_Property[i].Value = Convert.ToString(secondarylabel[i]) + "%";
-						AllLightsIcon_Property.Value = "icLightsOnRegular";
-					}
+
+					Slider_Property[i].Value = state[i];
 				}
+			#endregion Update All Channels
+
+				#region All Lights ON/OFF State
+				//Keeps count of the state of the lights
+				if (Toggle_Property[i].Value == true)
+				{
+					counter++;
+				}
+
+				if (counter > 0)
+				{
+					AllLightsON = true;
+					AllLightsIcon_Property.Value = "icLightsOnRegular";
+
+				}
+				else
+				{
+					AllLightsON = false;
+					AllLightsIcon_Property.Value = "icLightsOffDisabled";
+				}
+				#endregion All Lights ON/OFF State
 			}
+			//Save the changes made to the UI
 			Commit();
 		}
 
-		public void SetStatus(bool status)
+        #region SetStatus Method
+        //Since the "Connected" property is readonly for other classes,
+        //we have to provide a method for them to be able to modify it
+        public void SetStatus(bool status)
 		{
 			Connected = status;
 		}
+		#endregion SetStatus Method
 
-        #region Events
+		#region Events
 		[ProgrammableOperation ("Lights On")]
 		public void AllLightsOn()
         {
-			Protocol.TurnOnLight(0);
+			//0 == the method applies to all indexes (lights)
+			Protocol.TurnOnAllLight(0);
         }
 
 		[ProgrammableOperation("Lights Off")]
 		public void AllLightsOff()
 		{
-			Protocol.TurnOffLight(0);
+			//0 == the method applies to all indexes (lights)
+			Protocol.TurnOffAllLight(0);
 		}
-		#endregion Events
+        #endregion Events
 
-		#region Overrides
-		protected override IOperationResult DoCommand(string command, string[] parameters)
+        #region Overrides
+
+        protected override IOperationResult DoCommand(string command, string[] parameters)
 		{
-			//icLightsOffDisabled
-			//icLightsOnRegular
-			//icSpinner
-
-			//The tile of the Device was pressed
-			if (command == "AllOn")
+            #region AllOn Command
+            //The tile of the Device was pressed
+            if (command == "AllOn")
 			{
+				//momentarily change the light icon to a loading icon
 				AllLightsIcon_Property.Value = "icSpinner";
 				Commit();
+
+				//Check the state based on the counter in Update_UI
 				if (AllLightsON == true)
                 {
+					//Turn off all lights, change icon, change the state of the UI, apply changes to the UI
 					AllLightsOff();
 					AllLightsIcon_Property.Value = "icLightsOffDisabled";
+                    for (int i = 0; i < ChannelNumber; i++)
+                    {
+						Toggle_Property[i].Value = false;
+                    }
+					Commit();
 				}
                 else
                 {
+					//Turn on all lights, change icon, change the state of the UI, apply changes to the UI
 					AllLightsOn();
 					AllLightsIcon_Property.Value = "icLightsOnRegular";
+					for (int i = 0; i < ChannelNumber; i++)
+					{
+						Toggle_Property[i].Value = true;
+					}
+					Commit();
 				}
 				Commit();
 			}
+			#endregion AllOn Command
 
 			return new OperationResult(OperationResultCode.Success);
 		}
 
-		protected override IOperationResult SetDriverPropertyValue<T>(string propertyKey, T value)
+        protected override IOperationResult SetDriverPropertyValue<T>(string propertyKey, T value)
 		{
 			//Search through all the property keys
 			for (int i = 0; i < ChannelNumber; i++)
 			{
-				if (propertyKey == Lights_Toggle_Keys[i])
+                #region Toggle Property
+                if (propertyKey == Lights_Toggle_Keys[i])
 				{
-					//Turn on or off the Light i, depending on the state of the property
+					//Turn the Lights i on or off, depending on the state of the property
+					//Save and Update the state of all affected elements
 					var state = value as bool?;
 					if (state != null)
 					{
 						if (state == true)
 						{
 							Protocol.TurnOnLight(i + 1);
-							//Protocol.SliderLight(i + 1, 100);
 							Slider_Property[i].Value = 100;
 							Percent_Property[i].Value = "100%";
 							Toggle_Property[i].Value = true;
@@ -317,138 +305,137 @@ namespace FutureNow_FNIP
 						else
 						{
 							Protocol.TurnOffLight(i + 1);
-							//Protocol.SliderLight(i + 1, 0);
 							Slider_Property[i].Value = 0;
 							Percent_Property[i].Value = "OFF";
 							Toggle_Property[i].Value = false;
 						}
-						//Protocol.ToggleLight(i + 1);
-						//Protocol.SliderLight(i + 1, (int)sliderstate);
 					}
-					//Save the state of the toggle
-					//Toggle_Property[i].Value = (bool)state;
 					//Save the changes made to the UI
 					Commit();
 
 					return new OperationResult(OperationResultCode.Success);
 				}
-				else if (propertyKey == Lights_Slider_Keys[i])
+                #endregion Toggle Property
+
+                #region Slider Property
+                else if (propertyKey == Lights_Slider_Keys[i])
 				{
-					Log("Slider pressed");
+					Toggle_Property[i].Value = true;
+					Commit();
+
+					//Change the Dimming i, depending on the state of the property
+					//Save and Update the state of all affected elements
 					var sliderstate = value as int?;
-					Log("sliderstate is: " + sliderstate);
-					//var togglestate = value as bool?;
 					if (sliderstate != null)
 					{
-						Log("Sliderstate is not null");
-						//Slider_Property[i].Value = (int)sliderstate;
-
 						if (sliderstate > 0)
 						{
-							//Protocol.TurnOnLight(i + 1);
-							Protocol.SliderLight(i + 1, (int)sliderstate);
 							Toggle_Property[i].Value = true;
+							Protocol.SliderLight(i + 1, (int)sliderstate);
 							Percent_Property[i].Value = Convert.ToString(sliderstate) + "%";
-							Log("Changed slider value to:" + (int)sliderstate);
 						}
 						else
 						{
-							//Protocol.TurnOffLight(i + 1);
+							Toggle_Property[i].Value = false;
+							Protocol.SliderLight(i + 1, 0);
+							Percent_Property[i].Value = "OFF";
+						}
+
+					}
+					//Save the state of the slider
+					Slider_Property[i].Value = (int)sliderstate;
+					//Save the changes made to the UI
+					Commit();
+
+					return new OperationResult(OperationResultCode.Success);
+				}
+                #endregion Slider Property
+
+                #region Percent Property
+                else if (propertyKey == Lights_Percent_Keys[i])
+				{
+					var state = value as string;
+					Percent_Property[i].Value = state + "%";
+					Commit();
+
+					return new OperationResult(OperationResultCode.Success);
+				}
+			}
+			#endregion Percent Property
+
+			return new OperationResult(OperationResultCode.Error);
+		}
+
+        protected override IOperationResult SetDriverPropertyValue<T>(string objectId, string propertyKey, T value)
+		{
+			//Search through all the property keys
+			for (int i = 0; i < ChannelNumber; i++)
+			{
+                #region Toggle Property
+                if (propertyKey == Lights_Toggle_Keys[i])
+				{
+					//Turn the Lights i on or off, depending on the state of the property
+					//Save and Update the state of all affected elements
+					var state = value as bool?;
+					if (state != null)
+					{
+						if (state == true)
+						{
+							Protocol.TurnOnLight(i + 1);
+							Slider_Property[i].Value = 100;
+							Percent_Property[i].Value = "100%";
+							Toggle_Property[i].Value = true;
+						}
+						else
+						{
+							Protocol.TurnOffLight(i + 1);
+							Slider_Property[i].Value = 0;
+							Percent_Property[i].Value = "OFF";
+							Toggle_Property[i].Value = false;
+						}
+					}
+					//Save the changes made to the UI
+					Commit();
+
+					return new OperationResult(OperationResultCode.Success);
+				}
+				#endregion Toggle Property
+
+				#region Slider Property
+				else if (propertyKey == Lights_Slider_Keys[i])
+				{
+					Toggle_Property[i].Value = true;
+					Commit();
+
+					//Change the Dimming i, depending on the state of the property
+					//Save and Update the state of all affected elements
+					var sliderstate = value as int?;
+					if (sliderstate != null)
+					{
+						if (sliderstate > 0)
+						{
+							Protocol.SliderLight(i + 1, (int)sliderstate);
+							Toggle_Property[i].Value = true;
+							Percent_Property[i].Value = Convert.ToString(sliderstate) + "%";
+						}
+						else
+						{
 							Protocol.SliderLight(i + 1, 0);
 							Toggle_Property[i].Value = false;
 							Percent_Property[i].Value = "OFF";
 						}
 
 					}
+					//Save the state of the slider
 					Slider_Property[i].Value = (int)sliderstate;
-
-					Commit();
-
-					return new OperationResult(OperationResultCode.Success);
-				}
-				else if (propertyKey == Lights_Percent_Keys[i])
-				{
-					var state = value as string;
-					Percent_Property[i].Value = state + "%";
-					Commit();
-
-					return new OperationResult(OperationResultCode.Success);
-				}
-			}
-			return new OperationResult(OperationResultCode.Error);
-		}
-
-		protected override IOperationResult SetDriverPropertyValue<T>(string objectId, string propertyKey, T value)
-		{
-			//Search through all the property keys
-			for (int i = 0; i < ChannelNumber; i++)
-			{
-				if (propertyKey == Lights_Toggle_Keys[i])
-				{
-					//Turn on or off the Light i, depending on the state of the property
-					var state = value as bool?;
-					if (state != null)
-					{
-						if (state == true)
-						{
-							Protocol.TurnOnLight(i + 1);
-							//Protocol.SliderLight(i + 1, 100);
-							Slider_Property[i].Value = 100;
-							Percent_Property[i].Value = "100%";
-							Toggle_Property[i].Value = true;
-						}
-						else
-						{
-							Protocol.TurnOffLight(i + 1);
-							//Protocol.SliderLight(i + 1, 0);
-							Slider_Property[i].Value = 0;
-							Percent_Property[i].Value = "OFF";
-							Toggle_Property[i].Value = false;
-						}
-						//Protocol.ToggleLight(i + 1);
-						//Protocol.SliderLight(i + 1, (int)sliderstate);
-					}
-					//Save the state of the toggle
-					//Toggle_Property[i].Value = (bool)state;
 					//Save the changes made to the UI
 					Commit();
 
 					return new OperationResult(OperationResultCode.Success);
 				}
-				else if (propertyKey == Lights_Slider_Keys[i])
-				{
-					Log("Slider pressed");
-					var sliderstate = value as int?;
-					Log("sliderstate is: " + sliderstate);
-					//var togglestate = value as bool?;
-					if (sliderstate != null)
-					{
+				#endregion Slider Property
 
-						//Slider_Property[i].Value = (int)sliderstate;
-
-						if (sliderstate > 0)
-						{
-							//Protocol.TurnOnLight(i + 1);
-							Protocol.SliderLight(i + 1, (int)sliderstate);
-							Toggle_Property[i].Value = true;
-							Percent_Property[i].Value = Convert.ToString(sliderstate) + "%";
-							Log("Changed slider value to:" + (int)sliderstate);
-						}
-						else
-						{
-							//Protocol.TurnOffLight(i + 1);
-							Protocol.SliderLight(i + 1, (int)sliderstate);
-							Toggle_Property[i].Value = false;
-							Percent_Property[i].Value = "OFF";
-						}
-
-					}
-					Slider_Property[i].Value = (int)sliderstate;
-
-					Commit();
-
-					return new OperationResult(OperationResultCode.Success);
-				}
+				#region Percent Property
 				else if (propertyKey == Lights_Percent_Keys[i])
 				{
 					var state = value as string;
@@ -457,11 +444,13 @@ namespace FutureNow_FNIP
 
 					return new OperationResult(OperationResultCode.Success);
 				}
+				#endregion Percent Property
 			}
 			return new OperationResult(OperationResultCode.Error);
 		}
 
-		public override void Connect()
+        #region Connect Method
+        public override void Connect()
 		{
 			if (Protocol == null)
 			{
@@ -483,8 +472,10 @@ namespace FutureNow_FNIP
 				}
 			}
 		}
+        #endregion Connect Method
 
-		public override void Disconnect()
+        #region Disconnect Method
+        public override void Disconnect()
 		{
 			if (Protocol == null)
 			{
@@ -498,6 +489,7 @@ namespace FutureNow_FNIP
 				Connected = false;
 			}
 		}
+		#endregion Disconnect Method
 		#endregion Overrides
 	}
 }

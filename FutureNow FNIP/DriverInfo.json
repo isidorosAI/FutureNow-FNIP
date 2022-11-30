@@ -134,6 +134,104 @@
 					"Mask": "",
 					"DefaultValue": "Light 6 Name"
 				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp1value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes Light #1 to ramp to another value",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp2value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes Light #2 to ramp to another value",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp3value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes Light #3 to ramp to another value",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp4value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes Light #4 to ramp to another value",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp5value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes Light #5 to ramp to another value",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp6value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes Light #6 to ramp to another value",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
+			},
+
+			{
+				"Typename": "Custom",
+				"ParameterId": "Ramp7value",
+				"Label": "Ramp Time (sec):",
+				"Description": "The time it takes All Lights to ramp to ON/OFF",
+				"Persistent": true,
+				"RequiredForConnection": "None",
+				"Data": {
+					"DataType": "String",
+					"Mask": "",
+					"DefaultValue": "1"
+				}
 			}
 		],
 		"Dependencies": [ "" ]
